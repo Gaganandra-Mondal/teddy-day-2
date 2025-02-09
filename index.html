@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teddy Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://t3.ftcdn.net/jpg/01/13/31/64/360_F_113316480_38pFv156QZ63Muku421twISdjlBFZKPT.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        img {
+            height: 250px;
+            width: 250px;
+            animation: float 3s ease-in-out infinite;
+            border: 2px solid pink;
+            border-radius: 50%;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+        }
+        .btn {
+            background-color: #ff4d94;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #cc0077;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shopsy-stuffed-toy/j/p/g/soft-i-love-you-valentine-couple-teddy-bear-vstargallery-original-imaff9b3kbmfdkxg.jpeg?q=90&crop=false" alt="Teddy Bear">
+        <h1 id="message"></h1>
+        <button class="btn" onclick="showMessage()">Click for a Surprise</button>
+    </div>
+    <script>
+        function showMessage() {
+            const message = "Happy Teddy Day!🧸 Wishing you lots of love and cuddles! to my little Lily 🐣💖";
+            let i = 0;
+            document.getElementById("message").innerHTML = "";
+            function typeEffect() {
+                if (i < message.length) {
+                    document.getElementById("message").innerHTML += message.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            typeEffect();
+        }
+    </script>
+</body>
+</html>
